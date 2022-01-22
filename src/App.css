@@ -1,38 +1,76 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100%;
+  max-width: var(--game-max-width);
+  margin: 0 auto;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.Grid {
+  margin: 20px 8px;
+  width: 90%;
+}
+
+.Row {
+  display: flex;
+  width: 100%;
+  margin: 4px;
+  gap: 4px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.Box {
+  font-size: 2rem;
+  background-color: grey;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+}
+
+.Letter {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: bold;
+  vertical-align: middle;
+  box-sizing: border-box;
+  color: var(--tile-text-color);
+  text-transform: uppercase;
+  user-select: none;
+}
+
+.Keyboard {
+  margin: 0 8px;
+  width: 90%;
+}
+
+.KBRow {
+  display: flex;
+  width: 100%;
+  margin: 0 auto 8px;
+  touch-action: manipulation;
+}
+
+button {
+  font-family: inherit;
+  font-weight: bold;
+  border: 0;
+  padding: 0;
+  margin: 0 6px 0 0;
+  height: 58px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+  background-color: darkgray;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
 }
