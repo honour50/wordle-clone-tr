@@ -8,6 +8,7 @@ import { Container, Snackbar, TextField, Button, Backdrop, Alert } from '@mui/ma
 import BackspaceIcon from '@mui/icons-material/Backspace';
 import styled from 'styled-components'
 import words from './words.js'
+import { Helmet } from "react-helmet";
 
 function setCharAt(str, index, chr) {
   if (index > str.length - 1) return str;
@@ -32,6 +33,10 @@ function App() {
   const row1 = [];
   const row2 = [];
   const row3 = [];
+
+
+
+
 
   const Key = styled.button`
   border-radius: 4px;
@@ -89,6 +94,7 @@ function App() {
   }
 
   useEffect(() => {
+
     function initializeWordGrid() {
       let newWordGrid = [];
       for (let i = 0; i < 6; i++) {
@@ -183,56 +189,61 @@ function App() {
   };
 
   return (
-    <Container maxWidth="sm">
-      <div className="Header">WORDLE CLONE</div>
-      <div className="App">
-        <Backdrop
-          sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-          open={isWon}
-          onClick={handleClose}>
-          You Won!
-        </Backdrop>
-        <Backdrop
-          sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
-          open={isLost}
-          onClick={handleClose}>
-          You Lost!
-          The answer was {solution}
-        </Backdrop>
-        <div className="Grid">
-          {wordGrid.map((row, rowIndex) => (
-            <div className="Row">
-              {row.map((col, colIndex) => (
-                <Box status={wordGrid[rowIndex][colIndex].state}>
-                  <div className="Letter">
-                    {wordGrid[rowIndex][colIndex].letter}
-                  </div>
-                </Box>
-              ))
-              }
+    <div>
+      <Helmet>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"></meta>
+      </Helmet>
+      <Container maxWidth="sm">
+        <div className="Header">WORDLE CLONE</div>
+        <div className="App">
+          <Backdrop
+            sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+            open={isWon}
+            onClick={handleClose}>
+            You Won!
+          </Backdrop>
+          <Backdrop
+            sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+            open={isLost}
+            onClick={handleClose}>
+            You Lost!
+            The answer was {solution}
+          </Backdrop>
+          <div className="Grid">
+            {wordGrid.map((row, rowIndex) => (
+              <div className="Row">
+                {row.map((col, colIndex) => (
+                  <Box status={wordGrid[rowIndex][colIndex].state}>
+                    <div className="Letter">
+                      {wordGrid[rowIndex][colIndex].letter}
+                    </div>
+                  </Box>
+                ))
+                }
+              </div>
+            ))}
+          </div>
+          <Snackbar open={!doesWordExist} autoHideDuration={4000} onClose={handleClose}>
+            <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
+              Word is not in dictionary.
+            </Alert>
+          </Snackbar>
+          <div className="Keyboard">
+            <div className="KBRow">
+              {row1}
             </div>
-          ))}
-        </div>
-        <Snackbar open={!doesWordExist} autoHideDuration={4000} onClose={handleClose}>
-          <Alert onClose={handleClose} severity="error" sx={{ width: '100%' }}>
-            Word is not in dictionary.
-          </Alert>
-        </Snackbar>
-        <div className="Keyboard">
-          <div className="KBRow">
-            {row1}
-          </div>
-          <div className="KBRow">
-            {row2}
-          </div>
-          <div className="KBRow">
-            <SpecialButton onClick={(e) => handleSubmit(0)}>ENTER</SpecialButton>
-            {row3}
-            <SpecialButton onClick={(e) => handleErase(e)}><BackspaceIcon /></SpecialButton>
+            <div className="KBRow">
+              {row2}
+            </div>
+            <div className="KBRow">
+              <SpecialButton onClick={(e) => handleSubmit(0)}>ENTER</SpecialButton>
+              {row3}
+              <SpecialButton onClick={(e) => handleErase(e)}><BackspaceIcon /></SpecialButton>
+            </div>
           </div>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </div>
   );
 }
 
