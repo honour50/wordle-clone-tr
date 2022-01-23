@@ -33,11 +33,6 @@ function App() {
   const row1 = [];
   const row2 = [];
   const row3 = [];
-  console.log(solution)
-
-
-
-
 
   const Key = styled.button`
   border-radius: 4px;
