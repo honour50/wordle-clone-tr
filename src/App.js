@@ -27,12 +27,13 @@ function App() {
   const [listCorrect, setListCorrect] = useState([])
   const [listWrongPos, setListWrongPos] = useState([])
   const [listWrong, setListWrong] = useState([])
-  const KBRow1 = "QWERTYUIOP"
-  const KBRow2 = "ASDFGHJKL"
-  const KBRow3 = "ZXCVBNM"
+  const KBRow1 = "ERTYUIOPĞÜ"
+  const KBRow2 = "ASDFGHJKLŞİ"
+  const KBRow3 = "ZCVBNMÖÇ"
   const row1 = [];
   const row2 = [];
   const row3 = [];
+  console.log(solution)
 
 
 
@@ -194,7 +195,7 @@ function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"></meta>
       </Helmet>
       <Container maxWidth="sm">
-        <div className="Header">WORDLE CLONE</div>
+        <div className="Header">WORDLE CLONE TÜRKÇE</div>
         <div className="App">
           <Backdrop
             sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
