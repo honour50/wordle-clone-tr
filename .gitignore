@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+build/asset-manifest.json
+build/index.html
+build/static/css/main.830ad5fe.css
+build/static/css/main.830ad5fe.css.map

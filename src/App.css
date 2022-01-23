@@ -7,26 +7,25 @@
   flex-direction: column;
 }
 
+.Header{
+  text-align: center;
+  height: 50px;
+  color: #d7dadc;
+  border-bottom: 1px solid #d7dadc;
+  margin: 10px 10px;
+}
+
 .Grid {
-  margin: 20px 8px;
+  margin: 10px auto;
   width: 90%;
 }
 
 .Row {
   display: flex;
-  width: 100%;
-  margin: 4px;
-  gap: 4px;
+  width: 80%;
+  margin: 4px auto;
+  /* gap: 4px; */
   justify-content: center;
-}
-
-.Box {
-  font-size: 2rem;
-  background-color: grey;
-  padding: 8px;
-  width: 40px;
-  height: 40px;
-  border: 0;
 }
 
 .Letter {
@@ -45,8 +44,10 @@
 }
 
 .Keyboard {
-  margin: 0 8px;
-  width: 90%;
+  margin: 0 auto;
+  width: 100%;
+  max-height: 250px;
+  min-height: 150px;
 }
 
 .KBRow {
@@ -73,4 +74,9 @@ button {
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
+  border-radius: unset;
+}
+
+.KBLetter {
+  border-radius: 4px;
 }
