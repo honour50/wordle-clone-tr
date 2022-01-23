@@ -1,8 +1,8 @@
 {
-  "name": "wordle-clone",
+  "name": "wordle-clone-tr",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://honour50.github.io/wordle-clone/",
+  "homepage": "https://honour50.github.io/wordle-clone-tr/",
   "dependencies": {
     "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
